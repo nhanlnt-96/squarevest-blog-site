@@ -1,3 +1,1 @@
-$(document).ready(function () {
-  alert("jQuery works");
-});
+$(document).ready(function () {});
