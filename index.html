@@ -21,6 +21,15 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <!--    fontawsome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--    style-->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <title>
       3D-Drucker Branche bereits über 10 Milliarden Dollar Wert | SQUAREVEST
@@ -28,8 +37,11 @@
   </head>
   <body>
     <!--  header start-->
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+    <nav
+      id="navbarHeader"
+      class="navbar bg-primary navbar-expand-lg text-white"
+    >
+      <div class="container-xl position-relative">
         <button
           class="navbar-toggler"
           type="button"
@@ -48,33 +60,54 @@
               alt="SQuarevest Logo"
             />
           </a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/investoren"
+          <ul
+            class="navbar-nav mb-2 mb-lg-0 flex-grow-1 justify-content-center align-items-center fw-bold"
+          >
+            <li class="nav-item px-3">
+              <a
+                class="nav-link text-white"
+                aria-current="page"
+                href="https://www.squarevest.ag/investoren"
+                target="_blank"
                 >Investoren</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/initiatoren">Initiatoren</a>
+            <li class="nav-item px-3">
+              <a
+                class="nav-link text-white"
+                href="https://www.squarevest.ag/initiatoren"
+                target="_blank"
+                >Initiatoren</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/was-ist-squarevest"
+            <li class="nav-item px-3">
+              <a
+                class="nav-link text-white"
+                href="/was-ist-squarevest"
+                target="_blank"
                 >Was ist SQUAREVEST?</a
               >
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="nav-item fw-bold">
+              <a
+                href="https://www.squarevest.ag/was-ist-squarevest"
+                class="nav-link"
+                ><i class="fa-solid fa-key pe-1"></i> Kostenfrei testen</a
+              >
+            </div>
+            <button class="btn ms-4">
+              <img src="assets/icons/burger.svg" alt="burder icon" />
             </button>
-          </form>
+          </div>
         </div>
+        <!--      menu dropdown start-->
+        <div
+          id="menuDropdown"
+          class="bg-primary rounded-2 end-0 position-absolute p-4 menu-dropdown"
+        ></div>
+        <!--      menu dropdown end-->
       </div>
     </nav>
     <!--    header end-->

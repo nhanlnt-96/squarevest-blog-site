@@ -2,3 +2,23 @@
   --bs-body-font-family: "Poppins", sans-serif;
   --bs-primary: #57707c;
 }
+
+/*
+1. Customize color
+2. Header
+*/
+
+/*1. Customize color*/
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+.btn {
+  outline: none;
+}
+
+/*2. Header*/
+.menu-dropdown {
+  max-width: 360px;
+  width: 100%;
+}
