@@ -1,6 +1,6 @@
 :root {
-  --bs-body-font-family: "Poppins", sans-serif;
-  --bs-primary: #57707c;
+    --bs-body-font-family: "Poppins", sans-serif;
+    --bs-primary: #57707c;
 }
 
 /*breakpoint css*/
@@ -18,74 +18,82 @@
 
 /**Utils*/
 .svg-icon {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 /*1. Customize color*/
 .bg-primary {
-  background-color: var(--bs-primary) !important;
+    background-color: var(--bs-primary) !important;
 }
 
 .btn-primary {
-  background-color: var(--bs-primary) !important;
-  border: none;
-  outline: none;
+    background-color: var(--bs-primary) !important;
+    border: none;
+    outline: none;
 }
 
 .text-primary {
-  color: var(--bs-primary) !important;
+    color: var(--bs-primary) !important;
 }
 
 .btn {
-  outline: none;
+    outline: none;
 }
 
 p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /*2. Header*/
 .header-logo {
-  max-width: 140px;
+    max-width: 140px;
 }
 
 @media (min-width: 576px) {
-  .header-logo {
-    max-width: 200px;
-  }
+    .header-logo {
+        max-width: 200px;
+    }
 }
 
 .header-logo .header-logo__wrapper {
-  padding-bottom: calc(34 / 200 * 100%);
+    padding-bottom: calc(34 / 200 * 100%);
 }
 
 .menu-dropdown {
-  max-width: 360px;
-  left: 50%;
-  transform: translateX(-50%);
+    max-width: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-dropdown.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (min-width: 576px) {
-  .menu-dropdown {
-    left: unset;
-    transform: unset;
-    right: 12px;
-  }
+    .menu-dropdown {
+        left: unset;
+        transform: unset;
+        right: 12px;
+    }
 }
 
 @media (min-width: 1200px) {
-  .menu-dropdown {
-    right: 0;
-  }
+    .menu-dropdown {
+        right: 0;
+    }
 }
 
 .menu-dropdown__search .menu-dropdown__search-input {
-  outline: none;
-  padding: 12px 48px 12px 20px;
-  font-size: 16px;
+    outline: none;
+    padding: 12px 48px 12px 20px;
+    font-size: 16px;
 }
 
 .menu-dropdown__search .menu-dropdown__search-icon {
-  width: 48px;
+    width: 48px;
 }

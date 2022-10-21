@@ -128,10 +128,9 @@ const headerDropdownMenu = [
 $(window).on("load", () => {
   // UTILS
   // |-- header
-  // hide header menu dropdown
-  $("#menuDropdown").hide();
-
   // set header menu dropdown top space
+  $("#menuDropdown").css("top", `${$("#navbarHeader").outerHeight()}px`);
+
   function setMenuDropdownTop() {
     $("#menuDropdown").css("top", `${$("#navbarHeader").outerHeight()}px`);
   }
@@ -139,8 +138,6 @@ $(window).on("load", () => {
   $(window).resize(function () {
     setMenuDropdownTop();
   });
-
-  setMenuDropdownTop();
 
   // generate header menu dropdown
   headerDropdownMenu.map((menu) =>
@@ -154,7 +151,15 @@ $(window).on("load", () => {
   );
 
   // hide show header menu dropdown
-  $("#headerHamburgerBtn").trigger("click", () => {
-    console.log("outside");
+  let isOpenHeader = false;
+  $("#headerHamburgerBtn").click(() => {
+    const activeClass = "active";
+    const menuDropdown = $("#menuDropdown");
+    if (menuDropdown.hasClass(activeClass)) {
+      menuDropdown.removeClass(activeClass);
+    } else {
+      menuDropdown.addClass(activeClass);
+    }
+    isOpenHeader = !isOpenHeader;
   });
 });
