@@ -3,22 +3,89 @@
   --bs-primary: #57707c;
 }
 
+/*breakpoint css*/
+/*--scr-sm-device: 576px;*/
+/*--scr-md-device: 768px;*/
+/*--scr-lg-device: 992px;*/
+/*--scr-xl-device: 1200px;*/
+/*--scr-xxl-device: 1400px;*/
+
 /*
+* Utils
 1. Customize color
 2. Header
 */
+
+/**Utils*/
+.svg-icon {
+  width: 20px;
+  height: 20px;
+}
 
 /*1. Customize color*/
 .bg-primary {
   background-color: var(--bs-primary) !important;
 }
 
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border: none;
+  outline: none;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
 .btn {
   outline: none;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 /*2. Header*/
+.header-logo {
+  max-width: 140px;
+}
+
+@media (min-width: 576px) {
+  .header-logo {
+    max-width: 200px;
+  }
+}
+
+.header-logo .header-logo__wrapper {
+  padding-bottom: calc(34 / 200 * 100%);
+}
+
 .menu-dropdown {
   max-width: 360px;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 576px) {
+  .menu-dropdown {
+    left: unset;
+    transform: unset;
+    right: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-dropdown {
+    right: 0;
+  }
+}
+
+.menu-dropdown__search .menu-dropdown__search-input {
+  outline: none;
+  padding: 12px 48px 12px 20px;
+  font-size: 16px;
+}
+
+.menu-dropdown__search .menu-dropdown__search-icon {
+  width: 48px;
 }
