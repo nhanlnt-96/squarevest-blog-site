@@ -135,8 +135,16 @@ $(window).on("load", () => {
     $("#menuDropdown").css("top", `${$("#navbarHeader").outerHeight()}px`);
   }
 
-  $(window).resize(function () {
+  $(window).resize(() => {
     setMenuDropdownTop();
+  });
+
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > 0) {
+      $("#navbarHeader").addClass("fixed-top");
+    } else {
+      $("#navbarHeader").removeClass("fixed-top");
+    }
   });
 
   // generate header menu dropdown
