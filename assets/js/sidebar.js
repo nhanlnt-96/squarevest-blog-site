@@ -8,10 +8,13 @@ $(window).on("load", () => {
   // expand sidebar
   $("#expandSidebarBtn").click(() => {
     const sidebarContainer = $("#sidebarContainer");
+    const expandSidebarBtn = $("#expandSidebarBtn");
     const activeClass = "active";
     if (!sidebarContainer.hasClass(activeClass)) {
+      expandSidebarBtn.addClass(activeClass);
       sidebarContainer.addClass(activeClass);
     } else {
+      expandSidebarBtn.removeClass(activeClass);
       sidebarContainer.removeClass(activeClass);
     }
   });
