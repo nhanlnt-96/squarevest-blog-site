@@ -41,6 +41,7 @@ body {
 3. Blog content
 4. Info box card
 5. Banner
+6. Blog comment
 */
 
 /**Utils*/
@@ -393,13 +394,13 @@ p, blockquote, h6 {
 
 /*5. Banner*/
 .banner-section__container {
-    margin-top: 25px;
+    margin: 25px 0;
     background: linear-gradient(244.35deg, rgba(26, 184, 222, 0.8) 0.59%, rgba(87, 112, 124, 0.9) 98.66%);
 }
 
 @media (min-width: 768px) {
     .banner-section__container {
-        margin-top: 50px;
+        margin: 50px 0;
     }
 }
 
@@ -461,4 +462,121 @@ p, blockquote, h6 {
     bottom: 0;
     width: 100%;
     height: 100%;
+}
+
+/*6. Blog comment*/
+.blog-comment__container {
+    padding: 38px 20px;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container {
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+}
+
+.blog-comment__container .title {
+    font-size: clamp(25px, 5vw, 30px);
+    font-weight: 700;
+}
+
+.blog-comment__container .blog-comment__body {
+    margin-top: 35px;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__body {
+        margin-top: 70px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container.blog-comment_item-reply {
+    padding-left: 53px; /*= avatar width + margin-left of .blog-comment__item-content*/
+    margin-top: 30px;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__item-container.blog-comment_item-reply {
+        padding-left: 96px; /*= avatar width + margin-left of .blog-comment__item-content*/
+        margin-top: 60px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container.blog-comment_item-reply:before {
+    content: '';
+    height: 35px;
+    width: 5px;
+    background-color: var(--bs-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__item-container.blog-comment_item-reply:before {
+        height: 63px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-avatar {
+    width: 35px;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__item-container .blog-comment__item-avatar {
+        width: 63px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-avatar .blog-comment__item-avatar__container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-avatar .blog-comment__item-avatar__container > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content {
+    flex: 1;
+    margin-left: 18px;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__item-container .blog-comment__item-content {
+        margin-left: 33px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__header, .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__body {
+    font-size: 18px;
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__body, .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__footer {
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__body, .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__footer {
+        margin-top: 30px;
+    }
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__footer > .btn {
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__footer > .btn:hover {
+    color: #246B7D;
 }
