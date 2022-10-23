@@ -42,6 +42,7 @@ body {
 4. Info box card
 5. Banner
 6. Blog comment
+7. Blog swiper
 */
 
 /**Utils*/
@@ -55,6 +56,51 @@ body {
     height: 1px;
     width: 100%;
     background-color: var(--bs-primary);
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-button-next {
+    right: -50px;
+}
+
+.swiper-button-prev {
+    left: -50px;
+}
+
+.swiper-button-next > svg, .swiper-button-prev > svg {
+    width: 50px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    content: none;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-pagination {
+    bottom: 0px !important;
 }
 
 @media (min-width: 768px) {
@@ -294,13 +340,13 @@ textarea {
     }
 }
 
-.blog-title__container .blog-title__wrapper .title {
+.blog-title__container .blog-title__wrapper > .title {
     font-size: clamp(30px, 10vw, 40px);
     font-weight: 800;
     margin-bottom: 14px;
 }
 
-.blog-title__container .blog-title__wrapper .sub-title {
+.blog-title__container .blog-title__wrapper > .sub-title {
     font-size: 18px;
 }
 
@@ -401,12 +447,12 @@ textarea {
     object-fit: contain;
 }
 
-.blog-content__footer-content .blog-content__footer-content__header .title {
+.blog-content__footer-content .blog-content__footer-content__header > .title {
     font-weight: 700;
     font-size: 18px;
 }
 
-.blog-content__footer-content .blog-content__footer-content__header .sub-title, .blog-content__footer-content .description {
+.blog-content__footer-content .blog-content__footer-content__header > .sub-title, .blog-content__footer-content .description {
     font-weight: 400;
     font-size: 18px;
 }
@@ -459,13 +505,13 @@ textarea {
     }
 }
 
-.banner-section__container .banner-section__content .sub-title, .banner-section__container .banner-section__content .detail-list > li {
+.banner-section__container .banner-section__content > .sub-title, .banner-section__container .banner-section__content .detail-list > li {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 10px;
 }
 
-.banner-section__container .banner-section__content .title {
+.banner-section__container .banner-section__content > .title {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-size: clamp(36px, 5vw, 50px);
     font-weight: 700;
@@ -511,7 +557,7 @@ textarea {
     }
 }
 
-.blog-comment__container .title, .blog-comment__footer .title {
+.blog-comment__container .title, .blog-comment__footer > .title {
     font-size: clamp(25px, 5vw, 30px);
     font-weight: 700;
 }
@@ -591,7 +637,7 @@ textarea {
     }
 }
 
-.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__header, .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__body, .blog-comment__footer .sub-title {
+.blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__header, .blog-comment__container .blog-comment__item-container .blog-comment__item-content .blog-comment__item-content__body, .blog-comment__footer > .sub-title {
     font-size: 18px;
 }
 
@@ -617,7 +663,7 @@ textarea {
     color: #246B7D;
 }
 
-.blog-comment__footer .sub-title {
+.blog-comment__footer > .sub-title {
     margin-top: 8px;
 }
 
@@ -643,3 +689,87 @@ textarea {
     width: 100%;
 }
 
+/*7. Blog swiper*/
+.blog-swiper__container .swiper-wrapper {
+    padding: 20px 0;
+}
+
+.blog-swiper__container .title {
+    margin-bottom: 30px;
+    font-size: clamp(20px, 10vw, 30px);
+}
+
+@media (min-width: 768px) {
+    .blog-swiper__container > .title {
+        margin-bottom: 60px;
+    }
+}
+
+.blog-swiper__item {
+    min-height: 520px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.blog-swiper__item .blog-swiper__item-header {
+    width: 100%;
+}
+
+.blog-swiper__item .blog-swiper__item-header .blog-swiper__item-header__container {
+    width: 100%;
+    padding-bottom: calc(308 / 735 * 100%);
+    position: relative;
+}
+
+.blog-swiper__item .blog-swiper__item-header .blog-swiper__item-header__container > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-swiper__item .blog-swiper__item-body {
+    padding: 24px 12px;
+}
+
+.blog-swiper__item .blog-swiper__item-body > .sub-title {
+    font-size: 14px;
+}
+
+.blog-swiper__item .blog-swiper__item-body > .title {
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.blog-swiper__item .blog-swiper__item-body > .description {
+    font-size: 16px;
+}
+
+.blog-swiper__item .blog-swiper__item-footer {
+    margin-top: auto;
+    padding: 0 12px 24px 12px;
+}
+
+.blog-swiper__item .blog-swiper__item-footer .blog-swiper__item-footer__icon > img {
+    max-width: 24px;
+    width: 100%;
+}
+
+.blog-swiper__item .blog-swiper__item-footer .blog-swiper__item-footer__detail {
+    flex: 1;
+    margin-left: 24px;
+}
+
+.blog-swiper__item .blog-swiper__item-footer .blog-swiper__item-footer__detail > .title {
+    margin-bottom: 0;
+}
+
+.blog-swiper__item .blog-swiper__item-footer .blog-swiper__item-footer__detail > .title, .blog-swiper__item .blog-swiper__item-footer .blog-swiper__item-footer__detail > .datetime {
+    font-size: 16px;
+}
