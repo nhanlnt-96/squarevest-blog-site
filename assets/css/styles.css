@@ -40,6 +40,7 @@ body {
 3. Sidebar
 3. Blog content
 4. Info box card
+5. Banner
 */
 
 /**Utils*/
@@ -80,11 +81,25 @@ body {
     outline: none;
 }
 
+.btn-secondary {
+    background-color: #ffffff;
+    border-radius: unset;
+    color: var(--bs-primary);
+    padding: 13px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+}
+
 p, blockquote, h6 {
     margin-bottom: 0;
 }
 
 /*2. Header*/
+.header-container {
+    z-index: 100;
+}
+
 .header-logo {
     max-width: 140px;
 }
@@ -193,6 +208,7 @@ p, blockquote, h6 {
 
 @media (min-width: 992px) {
     .sidebar-container .sidebar-wrapper {
+        position: sticky;
         color: var(--bs-primary);
         max-width: 300px;
         width: 100%;
@@ -233,7 +249,13 @@ p, blockquote, h6 {
 
 /*3. Blog content*/
 .blog-content__container, .blog-title__wrapper {
-    padding: 0 38px;
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    .blog-content__container, .blog-title__wrapper {
+        padding: 0 38px;
+    }
 }
 
 .blog-title__container .blog-title__wrapper .title {
@@ -307,15 +329,6 @@ p, blockquote, h6 {
     }
 }
 
-.blog-content__wrapper .blog-content__detail > .blog-content__detail-bold {
-    font-weight: 700;
-}
-
-.blog-content__wrapper .blog-content__detail > .blog-content__detail-underline {
-    text-decoration: underline;
-}
-
-
 .blog-content__wrapper .blog-content__quote {
     font-style: italic;
     padding-left: 18px;
@@ -376,4 +389,76 @@ p, blockquote, h6 {
 .info-box__container .info-box__content > p {
     font-size: clamp(20px, 5vw, 22px);
     font-weight: 500;
+}
+
+/*5. Banner*/
+.banner-section__container {
+    margin-top: 25px;
+    background: linear-gradient(244.35deg, rgba(26, 184, 222, 0.8) 0.59%, rgba(87, 112, 124, 0.9) 98.66%);
+}
+
+@media (min-width: 768px) {
+    .banner-section__container {
+        margin-top: 50px;
+    }
+}
+
+.banner-section__container > .container > .row {
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    .banner-section__container > .container > .row {
+        padding: 0 38px;
+    }
+}
+
+.banner-section__container .banner-section__content {
+    padding: 38px 0;
+}
+
+@media (min-width: 768px) {
+    .banner-section__container .banner-section__content {
+        padding: 76px 0;
+    }
+}
+
+.banner-section__container .banner-section__content .sub-title, .banner-section__container .banner-section__content .detail-list > li {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.banner-section__container .banner-section__content .title {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.banner-section__container .banner-section__content .detail-list {
+    margin-bottom: 24px;
+}
+
+.banner-section__container .banner-section__content .detail-list > li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.banner-section__container .banner-section__image .banner-section__image-container {
+    max-width: 360px;
+    width: 100%;
+}
+
+.banner-section__container .banner-section__image .banner-section__image-container .banner-section__image-wrapper {
+    width: 100%;
+    padding-bottom: calc(426 / 360 * 100%);
+    position: relative;
+}
+
+.banner-section__container .banner-section__image .banner-section__image-container .banner-section__image-wrapper > img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }

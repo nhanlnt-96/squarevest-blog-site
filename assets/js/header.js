@@ -139,13 +139,13 @@ $(window).on("load", () => {
     setMenuDropdownTop();
   });
 
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > 0) {
-      $("#navbarHeader").addClass("fixed-top");
-    } else {
-      $("#navbarHeader").removeClass("fixed-top");
-    }
-  });
+  // $(window).scroll(() => {
+  //   if ($(this).scrollTop() > 0) {
+  //     $("#navbarHeader").addClass("position-sticky");
+  //   } else {
+  //     $("#navbarHeader").removeClass("position-sticky");
+  //   }
+  // });
 
   // generate header menu dropdown
   headerDropdownMenu.map((menu) =>
