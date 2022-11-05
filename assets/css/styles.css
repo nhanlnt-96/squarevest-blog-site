@@ -270,6 +270,8 @@ textarea {
     position: fixed;
     width: 100%;
     top: 108px;
+    overflow-y: scroll;
+    max-height: 600px;
 }
 
 @media (max-width: 991px) {
